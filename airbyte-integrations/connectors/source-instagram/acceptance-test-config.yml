@@ -39,21 +39,35 @@ acceptance_tests:
       - config_path: "secrets/config.json"
         configured_catalog_path: "integration_tests/configured_catalog.json"
         ignored_fields:
-          "user_insights":
-            - email_contacts
-            - follower_count
-            - get_directions_clicks
-            - impressions
-            - phone_call_clicks
-            - profile_views
-            - reach
-            - text_message_clicks
-            - website_clicks
-            - impressions_week
-            - reach_week
-            - impressions_days_28
-            - reach_days_28
-            - online_followers
+          user_insights:
+            - name: email_contacts
+              bypass_reason: "fast changing data"
+            - name: follower_count
+              bypass_reason: "fast changing data"
+            - name: get_directions_clicks
+              bypass_reason: "fast changing data"
+            - name: impressions
+              bypass_reason: "fast changing data"
+            - name: phone_call_clicks
+              bypass_reason: "fast changing data"
+            - name: profile_views
+              bypass_reason: "fast changing data"
+            - name: reach
+              bypass_reason: "fast changing data"
+            - name: text_message_clicks
+              bypass_reason: "fast changing data"
+            - name: website_clicks
+              bypass_reason: "fast changing data"
+            - name: impressions_week
+              bypass_reason: "fast changing data"
+            - name: reach_week
+              bypass_reason: "fast changing data"
+            - name: impressions_days_28
+              bypass_reason: "fast changing data"
+            - name: reach_days_28
+              bypass_reason: "fast changing data"
+            - name: online_followers
+              bypass_reason: "fast changing data"
   incremental:
     tests:
       - config_path: "secrets/config.json"

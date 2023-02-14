@@ -26,8 +26,16 @@ tests:
     - config_path: "secrets/config.json"
       configured_catalog_path: "integration_tests/configured_catalog.json"
       ignored_fields:
-        datagroups: [ "properties", "trigger_check_at" ]
-        looks: [ "properties", "last_accessed_at" ]
+        datagroups:
+          - name: properties
+            bypass_reason: "fast changing data"
+          - name: trigger_check_at
+            bypass_reason: "fast changing data"
+        looks:
+          - name: properties
+            bypass_reason: "fast changing data"
+          - name: last_accessed_at
+            bypass_reason: "fast changing data"
     # test the stream "run_looks" separately
     - config_path: "secrets/config.json"
       configured_catalog_path: "integration_tests/configured_run_looks_catalog.json"

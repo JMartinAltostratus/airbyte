@@ -1,6 +1,9 @@
 # Changelog
 
 ## 0.5.3
+Basic read test: add `ignored_fields`, change configuration format by adding `bypass_reason` [#22996](https://github.com/airbytehq/airbyte/pull/22996)
+
+## 0.5.3
 Spec tests: Make `oneOf` checks work for nested `oneOf`s. [#22395](https://github.com/airbytehq/airbyte/pull/22395)
 
 ## 0.5.2

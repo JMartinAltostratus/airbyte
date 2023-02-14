@@ -110,6 +110,15 @@ class EmptyStreamConfiguration(BaseConfig):
         return hash((type(self),) + tuple(self.__dict__.values()))
 
 
+class IgnoredFieldsConfiguration(BaseConfig):
+    name: str
+    bypass_reason: Optional[str] = Field(default=None, description="Reason why this field is considered ignored.")
+
+
+ignored_fields: Optional[Mapping[str, List[IgnoredFieldsConfiguration]]] = Field(
+    description="For each stream, list of fields path ignoring in sequential reads test"
+)
+
 class BasicReadTestConfig(BaseConfig):
     config_path: str = config_path
     configured_catalog_path: Optional[str] = configured_catalog_path
@@ -124,6 +133,7 @@ class BasicReadTestConfig(BaseConfig):
     )
     expect_trace_message_on_failure: bool = Field(True, description="Ensure that a trace message is emitted when the connector crashes")
     timeout_seconds: int = timeout_seconds
+    ignored_fields: Optional[Mapping[str, List[IgnoredFieldsConfiguration]]] = ignored_fields
 
 
 class FullRefreshConfig(BaseConfig):
@@ -136,9 +146,7 @@ class FullRefreshConfig(BaseConfig):
     config_path: str = config_path
     configured_catalog_path: Optional[str] = configured_catalog_path
     timeout_seconds: int = timeout_seconds
-    ignored_fields: Optional[Mapping[str, List[str]]] = Field(
-        description="For each stream, list of fields path ignoring in sequential reads test"
-    )
+    ignored_fields: Optional[Mapping[str, List[IgnoredFieldsConfiguration]]] = ignored_fields
 
 
 class FutureStateConfig(BaseConfig):

@@ -37,8 +37,10 @@ tests:
     - config_path: "secrets/config.json"
       configured_catalog_path: "integration_tests/configured_catalog.json"
       ignored_fields:
-        "meetings":
-          - "start_url"
-        "webinars":
-          - "start_url"          
+        meetings:
+          - name: start_url
+            bypass_reason: "fast changing data"
+        webinars:
+          - name: start_url
+            bypass_reason: "fast changing data"
       timeout_seconds: 3600

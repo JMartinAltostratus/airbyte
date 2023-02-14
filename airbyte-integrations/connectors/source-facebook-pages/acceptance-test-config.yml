@@ -37,6 +37,9 @@ acceptance_tests:
           # Since we generating new Page access token for each connector run this
           # field would containt different values.
           page:
-            - "posts/paging/next"
-            - "published_posts/paging/next"
-            - "feed/paging/next"
+            - name: "posts/paging/next"
+              bypass_reason: "fast changing data"
+            - name: "published_posts/paging/next"
+              bypass_reason: "fast changing data"
+            - name: "feed/paging/next"
+              bypass_reason: "fast changing data"

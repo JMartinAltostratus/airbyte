@@ -36,4 +36,10 @@ tests:
       configured_catalog_path: "integration_tests/configured_catalog.json"
       timeout_seconds: 7200
       ignored_fields:
-        "products_graph_ql": ["onlineStorePreviewUrl", "updatedAt", "totalInventory"]
+        products_graph_ql:
+          - name: onlineStorePreviewUrl
+            bypass_reason: "fast changing data"
+          - name: updatedAt
+            bypass_reason: "fast changing data"
+          - name: totalInventory
+            bypass_reason: "fast changing data"

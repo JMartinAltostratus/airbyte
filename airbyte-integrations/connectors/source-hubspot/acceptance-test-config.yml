@@ -47,20 +47,30 @@ acceptance_tests:
         configured_catalog_path: sample_files/full_refresh_oauth_catalog.json
         ignored_fields:
           companies:
-          - properties
-          - hs_time_in_subscriber
+            - name: properties
+              bypass_reason: "fast changing data"
+            - name: hs_time_in_subscriber
+              bypass_reason: "fast changing data"
           contact_lists:
-          - properties
-          - ilsFilterBranch
+            - name: properties
+              bypass_reason: "fast changing data"
+            - name: ilsFilterBranch
+              bypass_reason: "fast changing data"
           contacts:
-          - properties
-          - hs_time_in_subscriber
+            - name: properties
+              bypass_reason: "fast changing data"
+            - name: hs_time_in_subscriber
+              bypass_reason: "fast changing data"
           deals:
-          - properties
-          - hs_time_in_qualifiedtobuy
+            - name: properties
+              bypass_reason: "fast changing data"
+            - name: hs_time_in_qualifiedtobuy
+              bypass_reason: "fast changing data"
           tickets:
-          - properties
-          - hs_time_in_4
+            - name: properties
+              bypass_reason: "fast changing data"
+            - name: hs_time_in_4
+              bypass_reason: "fast changing data"
   incremental:
     tests:
       - config_path: secrets/config_oauth.json

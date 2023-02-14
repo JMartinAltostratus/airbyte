@@ -44,6 +44,8 @@ tests:
     - config_path: "secrets/connected_account_config.json"
       configured_catalog_path: "integration_tests/connected_account_configured_catalog.json"
       ignored_fields:
-        "invoices":
-          - invoice_pdf
-          - hosted_invoice_url
+        invoices:
+          - name: invoice_pdf
+            bypass_reason: "fast changing data"
+          - name: hosted_invoice_url
+            bypass_reason: "fast changing data"

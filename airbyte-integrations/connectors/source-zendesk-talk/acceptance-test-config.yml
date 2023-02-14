@@ -48,6 +48,12 @@ acceptance_tests:
       - config_path: "secrets/config.json"
         configured_catalog_path: "integration_tests/configured_catalog.json"
         ignored_fields:
-          account_overview: ["current_timestamp"]
-          agents_overview: ["current_timestamp"]
-          current_queue_activity: ["current_timestamp"]
+          account_overview:
+            - name: current_timestamp
+              bypass_reason: "fast changing data"
+          agents_overview:
+            - name: current_timestamp
+              bypass_reason: "fast changing data"
+          current_queue_activity:
+            - name: current_timestamp
+              bypass_reason: "fast changing data"

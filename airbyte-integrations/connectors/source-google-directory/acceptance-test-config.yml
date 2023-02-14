@@ -25,4 +25,8 @@ tests:
       configured_catalog_path: "integration_tests/configured_catalog.json"
       # API returns different lastLoginTime for some users, eteg is generated based on all data, so also sometime are different
       ignored_fields:
-        "users": ["etag", "lastLoginTime"]
+        users:
+          - name: etag
+            bypass_reason: "fast changing data"
+          - name: lastLoginTime
+            bypass_reason: "fast changing data"

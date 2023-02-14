@@ -30,8 +30,10 @@ acceptance_tests:
         configured_catalog_path: integration_tests/configured_catalog.json
         ignored_fields:
           users:
-            - created_at
-            - updated_at
+            - name: created_at
+              bypass_reason: "fast changing data"
+            - name: updated_at
+              bypass_reason: "fast changing data"
   incremental:
     tests:
       - config_path: secrets/config.json

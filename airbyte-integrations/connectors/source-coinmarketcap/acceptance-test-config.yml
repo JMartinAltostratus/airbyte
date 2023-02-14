@@ -40,15 +40,26 @@ acceptance_tests:
         timeout_seconds: 1800
         ignored_fields:
           categories:
-            - "avg_price_change"
-            - "market_cap"
-            - "market_cap_change"
-            - "volume"
-            - "volume_change"
+            - name: avg_price_change
+              bypass_reason: "fast changing data"
+            - name: market_cap
+              bypass_reason: "fast changing data"
+            - name: market_cap_change
+              bypass_reason: "fast changing data"
+            - name: volume
+              bypass_reason: "fast changing data"
+            - name: volume_change
+              bypass_reason: "fast changing data"
           listing:
-            - "cmc_rank"
-            - "last_updated"
-            - "self_reported_circulating_supply"
-            - "self_reported_market_cap"
-            - "tvl_ratio"
-            - "quote"
+            - name: cmc_rank
+              bypass_reason: "fast changing data"
+            - name: last_updated
+              bypass_reason: "fast changing data"
+            - name: self_reported_circulating_supply
+              bypass_reason: "fast changing data"
+            - name: self_reported_market_cap
+              bypass_reason: "fast changing data"
+            - name: tvl_ratio
+              bypass_reason: "fast changing data"
+            - name: quote
+              bypass_reason: "fast changing data"

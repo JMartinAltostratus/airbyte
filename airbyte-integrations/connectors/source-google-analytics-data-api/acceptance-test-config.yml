@@ -27,14 +27,30 @@ acceptance_tests:
       - config_path: "secrets/config.json"
         configured_catalog_path: "integration_tests/configured_catalog.json"
         ignored_fields:
-          "daily_active_users": ["uuid"]
-          "weekly_active_users": ["uuid"]
-          "four_weekly_active_users": ["uuid"]
-          "devices": ["uuid"]
-          "locations": ["uuid"]
-          "pages": ["uuid"]
-          "traffic_sources": ["uuid"]
-          "website_overview": ["uuid"]
+          daily_active_users:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          weekly_active_users:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          four_weekly_active_users:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          devices:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          locations:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          pages:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          traffic_sources:
+            - name: uuid
+              bypass_reason: "fast changing data"
+          website_overview:
+            - name: uuid
+              bypass_reason: "fast changing data"
   incremental:
     tests:
       - config_path: "secrets/config.json"

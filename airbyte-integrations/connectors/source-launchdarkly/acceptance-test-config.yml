@@ -40,4 +40,5 @@ acceptance_tests:
         configured_catalog_path: "integration_tests/configured_catalog.json"
         ignored_fields:
           members:
-            - "_lastSeen"
+            - name: _lastSeen
+              bypass_reason: "fast changing data"
