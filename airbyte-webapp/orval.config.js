@@ -1,6 +1,4 @@
-import { defineConfig } from "orval";
-
-export default defineConfig({
+module.exports = {
   api: {
     input: "../airbyte-api/src/main/openapi/config.yaml",
     output: {
@@ -60,4 +58,4 @@ export default defineConfig({
       },
     },
   },
-});
+};
