@@ -6,7 +6,7 @@
 import sys
 
 from airbyte_cdk.entrypoint import launch
-from source_google_directory import SourceGoogleDirectory
+from source_google_chromebooks import SourceGoogleDirectory
 
 if __name__ == "__main__":
     source = SourceGoogleDirectory()
